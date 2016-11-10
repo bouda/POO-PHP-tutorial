@@ -1,0 +1,47 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="php" type="docker-deploy" factoryName="Docker Deployment" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="JSONFilePath" value="" />
+        <option name="command" value="" />
+        <option name="containerName" value="php" />
+        <option name="entrypoint" value="" />
+        <option name="imageTag" value="php-sever-ssh-xdebug-composer" />
+        <option name="links">
+          <list>
+            <DockerLinkImpl>
+              <option name="name" value="mysqlserver" />
+            </DockerLinkImpl>
+          </list>
+        </option>
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="22" />
+              <option name="hostIp" value="" />
+              <option name="hostPort" value="2222" />
+            </DockerPortBindingImpl>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="8080" />
+              <option name="hostIp" value="" />
+              <option name="hostPort" value="8080" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="portBindingsExpanded" value="true" />
+        <option name="startBrowserSettings">
+          <browser />
+        </option>
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/sites" />
+              <option name="hostPath" value="/c/Users/mhamm/docker_projects" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method />
+  </configuration>
+</component>
