@@ -9,21 +9,41 @@
     <schema id="4" name="performance_schema"/>
     <schema id="5" name="sys"/>
     <table id="6" parent="1" name="articles"/>
-    <column id="7" parent="6" name="id">
+    <table id="7" parent="1" name="categories"/>
+    <column id="8" parent="6" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="8" parent="6" name="titre">
+    <column id="9" parent="6" name="titre">
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="9" parent="6" name="contenu">
+    <column id="10" parent="6" name="contenu">
       <data-type>longtext|0</data-type>
     </column>
-    <column id="10" parent="6" name="date">
+    <column id="11" parent="6" name="date">
       <data-type>datetime|0</data-type>
     </column>
-    <key id="11" parent="6" name="PRIMARY">
+    <column id="12" parent="6" name="category_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="13" parent="6" name="category_id">
+      <columns>category_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="14" parent="6" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="15" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="16" parent="7" name="titre">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="17" parent="7" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
