@@ -25,7 +25,7 @@ class Table
     }
 
     public static function all(){
-        return App::getDb()->query("SELECT * FROM ". static::getTable() , __CLASS__);
+        return App::getDb()->query("SELECT * FROM ". static::getTable() , get_called_class());
     }
 
     public function __get($name)
@@ -33,6 +33,10 @@ class Table
         $method = "get" . ucfirst($name);
         $this->$name = $this->$method();
         return $this->$name;
+    }
+
+    public static function find($id){
+        return App::getDb()->prepare("SELECT * FROM ". static::getTable() . " WHERE id=?" ,array($id), get_called_class(), true);
     }
 
 
