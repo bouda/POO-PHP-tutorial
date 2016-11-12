@@ -11,24 +11,8 @@ ini_set('xdebug.show_local_vars', 'on');
 //Error reporting
 error_reporting(E_ALL);
 
-
-if (isset($_GET['p'])){
-    $p = $_GET['p'];
-}
-else {
-    $p = 'home';
-}
-
-// Initialisation des objets
-
-ob_start();
-if ($p === 'home') {
-    require "pages/home.php";
-} elseif ($p === 'article'){
-    require "pages/single.php";
-} elseif ($p === 'categorie'){
-    require "pages/categorie.php";
-}
-$content = ob_get_clean();
-require "pages/templates/default.php";
-
+$app = \App\App::getInstance();
+$posts = $app->getTable('Posts');
+var_dump($app->getTable('Posts'));
+var_dump($app->getTable('categories'));
+var_dump($app->getTable('users'));
