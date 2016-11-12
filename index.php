@@ -13,6 +13,5 @@ error_reporting(E_ALL);
 
 $app = \App\App::getInstance();
 $posts = $app->getTable('Posts');
-var_dump($app->getTable('Posts'));
-var_dump($app->getTable('categories'));
-var_dump($app->getTable('users'));
+
+var_dump($posts->all());
