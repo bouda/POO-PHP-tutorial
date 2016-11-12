@@ -10,7 +10,7 @@ namespace App\Table;
 
 
 
-use App\Database\Database;
+use App\Database\MysqlDatabase;
 
 class Table
 {
@@ -18,7 +18,7 @@ class Table
     protected $table;
     protected $db;
 
-    public function __construct($name, Database  $db)
+    public function __construct($name, MysqlDatabase  $db)
     {
         $this->db = $db;
         if(empty($this->table))
