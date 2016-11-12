@@ -36,10 +36,11 @@
           <list>
             <DockerVolumeBindingImpl>
               <option name="containerPath" value="/sites" />
-              <option name="hostPath" value="/c/Users/mhamm/docker_projects" />
+              <option name="hostPath" value="/c/Users/Mhammed/docker_projects" />
             </DockerVolumeBindingImpl>
           </list>
         </option>
+        <option name="volumeBindingsExpanded" value="true" />
       </settings>
     </deployment>
     <method />

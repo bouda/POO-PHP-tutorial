@@ -10,7 +10,7 @@
 namespace App;
 
 
-use App\Table\Table;
+use App\Database\MysqlDatabase;
 
 class App
 {
@@ -43,7 +43,7 @@ class App
         $config = Config::getInstance();
         if (empty($this->db_instance))
         {
-            $this->db_instance = new Database($config->get('db_name'),$config->get('db_user'),$config->get('db_host'),$config->get('db_pass'));
+            $this->db_instance = new MysqlDatabase($config->get('db_name'),$config->get('db_user'),$config->get('db_host'),$config->get('db_pass'));
         }
         return $this->db_instance;
     }
